@@ -37,8 +37,8 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
-
-    @ManyToOne
+/*
+    @OneToMany(mappedBy = "borrowerList")
     @JoinColumn(name = "borrow_id")
-    private List<Borrow> borrowList;
+    private List<Borrow> borrowList;*/
 }

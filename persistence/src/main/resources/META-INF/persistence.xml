@@ -5,6 +5,12 @@
              version="2.1">
     <persistence-unit name="examplePersistenceUnit"
                       transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>model.Author</class>
+        <class>model.Book</class>
+        <class>model.Borrower</class>
+        <class>model.Borrow</class>
+        <class>model.BorrowerDetails</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/library?serverTimezone=UTC&amp;createDatabaseIfNotExist=true" />
             <property name="javax.persistence.jdbc.user" value="root" />

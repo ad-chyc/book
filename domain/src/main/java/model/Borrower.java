@@ -20,7 +20,7 @@ public class Borrower {
     @Column(name = "borrower_details")
     private String borrowerDetails;
 
-    @OneToMany(mappedBy = "borrowList")
-    private List<Borrow> borrows;
+   /* @OneToMany(mappedBy = "borrowList")
+    private List<Borrow> borrows;*/
 
 }

@@ -9,7 +9,8 @@ import javax.persistence.Persistence;
 
 public class AppLancher {
     public static void main(String[] args) {
-
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("examplePersistenceUnit");
+        EntityManager entityManager = emf.createEntityManager();
 
     }
 }
