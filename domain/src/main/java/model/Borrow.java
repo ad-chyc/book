@@ -12,13 +12,13 @@ public class Borrow {
     @Column(name = "borrow_id")
     private Long id;
 
-   /* @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
 
     @ManyToOne
     @JoinColumn(name = "borrower_id")
-    private List<Borrower> borrowerList;*/
+    private Borrower borrower;
 
     @Column(name = "rental_date")
     private LocalDate rentalDate;

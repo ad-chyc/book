@@ -7,15 +7,19 @@ import javax.persistence.*;
 public class BorrowerDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "borrower_details_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "adress")
-    private String adress;
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "phone")
     private String phone;
+
+    @OneToOne(mappedBy = "borrowerDetails")
+    private Borrower borrower;
+
 }

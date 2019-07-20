@@ -17,10 +17,11 @@ public class Borrower {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "borrower_details")
-    private String borrowerDetails;
+    @OneToMany(mappedBy = "borrower")
+    private List<Borrow> borrow;
 
-   /* @OneToMany(mappedBy = "borrowList")
-    private List<Borrow> borrows;*/
+    @OneToOne
+    @JoinColumn(name = "borrower_details_id")
+    private BorrowerDetails borrowerDetails;
 
 }

@@ -13,8 +13,8 @@ public class Book {
     @Column(name = "book_id")
     private Long id;
 
-    @Column(name = "boorow")
-    private boolean borrow;
+    @Column(name = "borrow")
+    private Boolean borrow;
 
     @Column(name = "category")
     private String category;
@@ -23,7 +23,7 @@ public class Book {
     private String isbn;
 
     @Column(name = "pages")
-    private int pages;
+    private Integer pages;
 
     @Column(name = "release_date")
     private LocalDate releaseDate;
@@ -37,8 +37,13 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
-/*
-    @OneToMany(mappedBy = "borrowerList")
-    @JoinColumn(name = "borrow_id")
-    private List<Borrow> borrowList;*/
+
+    @OneToMany(mappedBy = "book")
+    private List<Borrow> borrowList;
+
+    /*
+    @OneToMany(mappedBy = "book")
+    private
+
+     */
 }
