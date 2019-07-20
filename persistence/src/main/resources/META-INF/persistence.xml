@@ -17,7 +17,7 @@
             <property name="javax.persistence.jdbc.password" value="1234" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="javax.persistence.schema-generation.database.action"
-                      value="drop-and-create"/>
+                      value="none"/>
             <property name = "hibernate.show_sql" value = "true" />
         </properties>
     </persistence-unit>

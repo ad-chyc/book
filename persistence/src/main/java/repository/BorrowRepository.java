@@ -5,7 +5,7 @@ import model.Borrow;
 import javax.persistence.EntityManager;
 
 public class BorrowRepository extends GenericRepository<Borrow,Long> {
-    protected BorrowRepository(EntityManager entityManager) {
-        super(entityManager);
+    protected BorrowRepository() {
+
     }
 }

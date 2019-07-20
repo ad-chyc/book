@@ -5,7 +5,15 @@ import model.Book;
 import javax.persistence.EntityManager;
 
 public class BookRepository extends GenericRepository<Book,Long> {
-    protected BookRepository(EntityManager entityManager) {
-        super(entityManager);
-    }
+   private static BookRepository bookRepository;
+
+   private BookRepository(){}
+
+   public static BookRepository getInstance(){
+       if(bookRepository == null){
+           bookRepository = new BookRepository();
+       }
+
+       return bookRepository;
+   }
 }

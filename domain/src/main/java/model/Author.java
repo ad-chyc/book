@@ -59,6 +59,10 @@ public class Author {
         return bookList;
     }
 
+    public String authorName(){
+        return firstName + " " + lastName;
+    }
+
     public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
     }

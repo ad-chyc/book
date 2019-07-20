@@ -2,10 +2,18 @@ package repository;
 
 import model.Author;
 
-import javax.persistence.EntityManager;
-
 public class AuthorRepository extends GenericRepository<Author, Long> {
-    public AuthorRepository(EntityManager entityManager) {
-        super(entityManager);
+
+    private static AuthorRepository authorRepository;
+
+    private AuthorRepository(){
+
+    }
+
+    public static AuthorRepository getInstance(){
+       if(authorRepository == null){
+           authorRepository = new AuthorRepository();
+       }
+       return authorRepository;
     }
 }

@@ -1,19 +1,23 @@
 package repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
+import javax.persistence.*;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
+import java.util.Queue;
 
 public abstract class GenericRepository<T, K> {
 
-    protected final EntityManager em;
+    static EntityManager em;
+    protected final EntityManagerFactory emf;
     protected final Class<T> entityClass;
 
     @SuppressWarnings("unchecked")
-    protected GenericRepository(EntityManager entityManager) {
+    protected GenericRepository() {
+        this.emf = Persistence.createEntityManagerFactory("examplePersistenceUnit");
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
         this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
-        this.em = entityManager;
+
+        em = emf.createEntityManager();
     }
 
     public void create(T entity) {
@@ -61,4 +65,13 @@ public abstract class GenericRepository<T, K> {
             }
         }
     }
+
+    public List<T> getEntityList() {
+
+        Query query = em.createQuery("from " + entityClass.getName());
+
+        return query.getResultList();
+
+    }
+
 }
